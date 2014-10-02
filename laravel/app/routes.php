@@ -11,7 +11,9 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+Route::get('/', "HomeController@index");
+
+Route::get('view', "HomeController@view");
+
+Route::post('upload', [ 'as' => 'update', 'filter' => 'key', 'uses' => "HomeController@update"]);
+

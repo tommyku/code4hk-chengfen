@@ -13,7 +13,11 @@
 
 App::before(function($request)
 {
-	//
+    Route::filter('key', function() {
+        if (Input::get('key') == 'lkjgqe*@E&HSX(91r2cisO') {
+            return Response::make('mismatch', 401);
+        }
+    });
 });
 
 
